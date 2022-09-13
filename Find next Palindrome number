@@ -1,0 +1,21 @@
+# print palindrome number
+
+def next_palindrome(n):
+    n = n+1
+    while not is_palindrome(n):
+        n += 1
+    return n
+
+def is_palindrome(n):
+    return str(n) == str(n)[::-1]
+
+if __name__ == "__main__":
+
+    testcases = int(input("Enter the number of test cases "))
+    numbers = []
+    for i in range(testcases):
+        num = int(input("Enter the number "))
+        numbers.append(num)
+
+    for i in range(testcases):
+        print(f"Next palidrome for {numbers[i]} is {next_palindrome(numbers[i])}")
